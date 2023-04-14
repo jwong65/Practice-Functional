@@ -5,6 +5,18 @@ Problem 1: Write a function flatten_dict to flatten a nested dictionary by joini
 {'a': 1, 'b.x': 2, 'b.y': 3, 'c': 4}
 '''
 
+def flatten_dict(dictionary):
+    newdict =dict()
+    for i in dictionary.values():
+        print(i)
+        x = isinstance(i, dict)
+        print(x)
+        
+
+    # for i in dictionary:
+    #     print(i)
+
+flatten_dict({'a': 1, 'b': {'x': 2, 'y': 3}, 'c': 4})
 
 
 '''
