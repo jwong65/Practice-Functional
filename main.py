@@ -7,14 +7,39 @@ Problem 1: Write a function flatten_dict to flatten a nested dictionary by joini
 
 def flatten_dict(dictionary):
     newdict =dict()
-    for i in dictionary.values():
-        print(i)
-        x = isinstance(i, dict)
-        print(x)
+    for i in dictionary.keys():
+
+        key = i
+        value = dictionary[i]
+       
+        x = isinstance(value, dict)
+        if (x == False):
+            newdict[key]= value
+            # print (newdict)
+        else:
+            for o in value:
+                newvalue = value[o]
+                newkey = key + "." + o
+                newdict[newkey] = newvalue
+    print(newdict)
+
+
         
+
 
     # for i in dictionary:
     #     print(i)
+    #  x = isinstance(i, dict)
+    #     print(x)
+
+
+# 1
+# False
+# {'x': 2, 'y': 3}
+# True
+# 4
+# False
+
 
 flatten_dict({'a': 1, 'b': {'x': 2, 'y': 3}, 'c': 4})
 
